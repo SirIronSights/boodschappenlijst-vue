@@ -2,6 +2,6 @@
 </script>
 
 <template>
-    <router-view />
+  <div>Edit page works!</div>
 </template>
 
