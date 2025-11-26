@@ -4,13 +4,15 @@ import { computed } from 'vue';
 import { addProduct ,getAllProducts } from "./store";
 
 
-const product = {name: '', price: 0, quantity: 0};
+const product = ref({name: '', price: 0, quantity: 0});
 const products = computed(() => getAllProducts.value);
 
 function handleFormSubmit(newProduct) {
   addProduct(newProduct);
-  Object.assign(product, { name: '', price: 0, quantity: 0 });
+  product.value = {name: '', price: 0, quantity: 0 };
 }
+
+
 </script>
 
 <template>
@@ -29,7 +31,7 @@ function handleFormSubmit(newProduct) {
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(p, index) in getAllProducts" :key="index">
+        <tr v-for="(p, index) in products" :key="index">
           <td>{{ p.name }}</td>
           <td>{{ p.price.toFixed(2) }}</td>
           <td>{{ p.quantity }}</td>

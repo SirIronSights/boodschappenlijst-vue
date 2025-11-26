@@ -34,11 +34,11 @@ function handleSubmit(){
         </div>
         <div>
             <label>Price</label>
-            <input v-model="formProduct.price" type="number" required/>
+            <input v-model="formProduct.price" type="number" step="0.01" min="0" required/>
         </div>
         <div>
             <label>Quantity</label>
-            <input v-model.number="formProduct.quantity" type="number" required />
+            <input v-model.number="formProduct.quantity" type="number" min="0" required />
         </div>
 
         <button type="submit">Submit to me!</button>
