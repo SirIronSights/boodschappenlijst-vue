@@ -13,24 +13,28 @@ const totalCost = computed(() =>
 <template>
   <div>
     <table>
-      <tr>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Subtotal</th>
-      </tr>
-      <tr v-for="product in props.products" :key="product.name">
-        <td>{{ product.name }}</td>
-        <td>{{ product.price.toFixed(2) }}</td>
-        <td>
-          <input type="number" v-model.number="product.quantity" min="0" />
-        </td>
-        <td>{{ (product.price * product.quantity).toFixed(2) }}</td>
-      </tr>
-      <tr>
-        <td colspan="3"><strong>Total Cost:</strong></td>
-        <td>{{ totalCost.toFixed(2) }}</td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="product in props.products" :key="product.name">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price.toFixed(2) }}</td>
+          <td>
+            <input type="number" v-model.number="product.quantity" min="0" />
+          </td>
+          <td>{{ (product.price * product.quantity).toFixed(2) }}</td>
+        </tr>
+        <tr>
+          <td colspan="3"><strong>Total Cost:</strong></td>
+          <td>{{ totalCost.toFixed(2) }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
