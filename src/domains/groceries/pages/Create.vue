@@ -1,6 +1,6 @@
 <script setup>
 import GroceryForm from '../../components/GroceryForm.vue';
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { addProduct ,getAllProducts } from "./store";
 
 
@@ -38,5 +38,6 @@ function handleFormSubmit(newProduct) {
         </tr>
       </tbody>
     </table>
+    <RouterLink to="/">Back we go!</RouterLink>
   </div>
 </template>
